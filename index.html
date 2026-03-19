@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url('https://png.pngtree.com/thumb_back/fh260/background/20240327/pngtree-supermarket-aisle-with-empty-shopping-cart-at-grocery-store-retail-business-image_15646095.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-box {
+        text-align: center;
+        color: white;
+    }
+
+    .login-box img {
+        width: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 250px;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+    }
+
+    button {
+        width: 270px;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 25px;
+        border: none;
+        background-color: #ea872b;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color:#efab6c;
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <img src="https://img.freepik.com/premium-vector/logo-event-store_1051633-792.jpg?semt=ais_rp_progressive&w=740&q=80" alt="profile">
+    <h2>Welcome Back!</h2>
+
+    <input type="text" id="username" placeholder="Username or Email (admin & seller)"><br>
+    <input type="password" id="password" placeholder="Password (123 & 321)"><br>
+
+    <button onclick="login()">LOGIN</button>
+
+    <p class="error" id="error"></p>
+</div>
+
+<script>
+function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    if (username === "admin" && password === "123") {
+        // Go to Admin page
+        window.open("Product.html", "_blank");
+    } 
+    else if (username === "seller" && password === "321") {
+        // Go to Seller page
+        window.open("Pos.html", "_blank");
+    } 
+    else {
+        error.innerText = "Invalid username or password!";
+    }
+}
+</script>
+
+</body>
+</html>
